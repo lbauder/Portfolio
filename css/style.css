@@ -1,0 +1,704 @@
+/* =====================
+   GLOBAL
+===================== */
+
+body{
+margin:0;
+--bg-color:black;
+background:var(--bg-color);
+transition:background 0.6s ease;
+}
+/* =====================
+   TYPOGRAPHY
+===================== */
+
+p{
+color:white;
+font-family: Arial, sans-serif;
+font-size:0.9vw;
+}
+
+h1{
+color:white;
+font-family: Arial, sans-serif;
+font-size:1.5vw;
+}
+
+
+/* =====================
+   SCENE
+===================== */
+
+#scene{
+position:relative;
+
+width:100vw;
+height:calc(100vw * 9 / 16);
+
+max-height:100vh;
+
+margin:0;
+overflow:hidden;
+}
+
+#drawing{
+position:absolute;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+object-fit:contain;
+pointer-events:none;
+}
+
+
+
+/* =====================
+   COORDINATE HELPER
+===================== */
+
+#coords{
+position:absolute;
+top:10px;
+left:10px;
+background:black;
+color:white;
+padding:5px 10px;
+font-family:monospace;
+font-size:14px;
+border-radius:4px;
+pointer-events:none;
+}
+
+
+
+/* =====================
+   HOTSPOTS
+===================== */
+
+.hotspot{
+position:absolute;
+cursor:pointer;
+}
+
+/* overlay */
+
+.hotspot::after{
+content:"";
+position:absolute;
+inset:0;
+background-size:contain;
+background-repeat:no-repeat;
+background-position:center;
+opacity:0;
+transition:opacity .2s;
+}
+
+.hotspot:hover::after{
+opacity:1;
+}
+
+
+
+/* =====================
+   HOTSPOT OVERLAYS
+===================== */
+
+#overlay-layer{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+}
+
+#overlay-image{
+width:100%;
+height:100%;
+object-fit:contain;
+opacity:0;
+transition:opacity .2s;
+}
+
+
+
+
+
+/* =====================
+   HOTSPOT POSITIONS
+===================== */
+
+.coffee{
+left:30%;
+top:11%;
+width:19%;
+height:30%;
+}
+
+.polaroid{
+left:60%;
+top:60%;
+width:9%;
+height:11%;
+}
+
+.controller{
+left:31%;
+top:81%;
+width:12%;
+height:15%;
+}
+
+.rat{
+left:30.5%;
+top:69%;
+width:6%;
+height:11%;
+}
+
+.walkman{
+left:60%;
+top:76%;
+width:10%;
+height:15%;
+}
+
+.film{
+left:50%;
+top:11%;
+width:28%;
+height:30%;
+}
+
+
+
+/* =====================
+   CONTENT LAYER
+===================== */
+
+#content-layer{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+}
+
+.category{
+display:none;
+position:absolute;
+width:100%;
+height:100%;
+}
+
+
+
+/* =====================
+   ITEMS
+===================== */
+
+.item{
+pointer-events:auto;
+position:absolute;
+cursor:pointer;
+transition:transform .2s;
+}
+
+.item:hover{
+transform:scale(1.05);
+}
+
+.text-item{
+position:absolute;
+pointer-events:none;
+}
+
+/* =====================
+   ITEMS PLACEMENT
+===================== */
+.film-preview{
+background-image:url("../images/film_preview.png");
+background-size:contain;
+background-position:top;
+background-repeat:no-repeat;
+left:75%;
+top:0%;
+width:30%;
+height:30%;
+z-index:2;
+}
+.film-text{
+border:1px solid white;
+left:75%;
+top:33%;
+width:20%;
+height:40%;
+}
+
+.film-mask{
+position:absolute;
+left:95.9%;
+top:-6%;
+width:10%;
+height:20%;
+background:var(--bg-color);
+transition:background 0.6s ease;
+transform: rotate(-25deg);
+z-index:1;
+}
+
+
+
+
+.game1{
+left:6%;
+top:52%;
+width:10%;
+height:20%;
+
+background-image:url("../images/game1.png");
+background-size:contain;
+background-position:center;
+background-repeat:no-repeat;
+
+}
+.game2{
+left:16%;
+top:52%;
+width:10%;
+height:20%;
+
+background-image:url("../images/game2.png");
+background-size:contain;
+background-position:center;
+background-repeat:no-repeat;
+}
+.game3{
+left:6%;
+top:72%;
+width:10%;
+height:20%;
+
+background-image:url("../images/game3.png");
+background-size:contain;
+background-position:center;
+background-repeat:no-repeat;
+}
+.game4{
+left:16%;
+top:72%;
+width:10%;
+height:20%;
+
+background-image:url("../images/game4.png");
+background-size:contain;
+background-position:center;
+background-repeat:no-repeat;
+}
+.game-text{
+border:1px solid white;
+left:75%;
+top:33%;
+width:20%;
+height:40%;
+}
+
+
+.rat-text{
+border:1px solid white;
+left:5%;
+top:25%;
+width:20%;
+height:40%;
+}
+
+
+.walkman-player1{
+background:url("../images/walkman1.png") center/contain no-repeat;
+left:80%;
+top:30%;
+width:10%;
+height:20%;
+}
+.walkman-player2{
+background:url("../images/walkman2.png") center/contain no-repeat;
+left:80%;
+top:50%;
+width:10%;
+height:20%;
+}
+.walkman-player3{
+background:url("../images/walkman3.png") center/contain no-repeat;
+left:80%;
+top:70%;
+width:10%;
+height:20%;
+}
+.walkman-text{
+border:1px solid white;
+left:5%;
+top:25%;
+width:20%;
+height:40%;
+}
+.cd1{
+position:absolute;
+left:11.5%;
+top:5%;
+width:90%;
+height:90%;
+background:url("../images/cd1.png") center/contain no-repeat;
+}
+
+.cd2{
+position:absolute;
+left:11.5%;
+top:5%;
+width:90%;
+height:90%;
+background:url("../images/cd2.png") center/contain no-repeat;
+}
+
+.cd3{
+position:absolute;
+left:11.5%;
+top:5%;
+width:90%;
+height:90%;
+background:url("../images/cd3.png") center/contain no-repeat;
+}
+
+
+
+.polaroid-card1{
+left:70%;
+top:55%;
+width:10%;
+height:20%;
+transform: rotate(-8deg);
+background-image:url("../images/photo1.png");
+background-size:contain;
+background-position:center;
+background-repeat:no-repeat;
+}
+.polaroid-card2{
+left:75%;
+top:35%;
+width:10%;
+height:20%;
+transform: rotate(4deg);
+background-image:url("../images/photo2.png");
+background-size:contain;
+background-position:center;
+background-repeat:no-repeat;
+}
+.polaroid-card3{
+left:80%;
+top:55%;
+width:10%;
+height:20%;
+transform: rotate(8deg);
+background-image:url("../images/photo3.png");
+background-size:contain;
+background-position:center;
+background-repeat:no-repeat;
+}
+.picture-text{
+border:1px solid white;
+left:5%;
+top:25%;
+width:20%;
+height:40%;
+}
+
+.coffee-carousel{
+
+position:absolute;
+
+left:5%;
+top:25%;
+
+width:20%;
+height:20%;
+
+overflow:hidden;
+border:1px solid white;
+}
+
+.coffee-track{
+
+display:flex;
+
+transition:transform .4s ease;
+
+}
+
+.coffee-project{
+
+min-width:100%;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+}
+
+.coffee-image{
+
+width:80%;
+height:70%;
+
+background-size:contain;
+background-repeat:no-repeat;
+background-position:center;
+
+}
+
+.coffee-img1{
+background-image:url("../images/coffee1.png");
+}
+
+.coffee-img2{
+background-image:url("../images/coffee2.png");
+}
+
+.coffee-img3{
+background-image:url("../images/coffee3.png");
+}
+
+.coffee-arrow{
+
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+
+background:transparent;
+
+border:none;
+
+color:white;
+
+font-size:24px;
+
+width:35px;
+height:35px;
+
+cursor:pointer;
+
+z-index:20;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+pointer-events:auto;
+}
+
+.coffee-arrow.left{
+left:5px;
+}
+
+.coffee-arrow.right{
+right:5px;
+
+}
+
+.coffee-arrow:hover{
+transform:translateY(-50%) scale(1.1);
+}
+
+/* =====================
+   SPRITES
+   ===================== */
+
+.sprite{
+position:absolute;
+
+width:20%;
+height:20%;
+
+background-size:contain;
+background-repeat:no-repeat;
+
+pointer-events:none;
+
+opacity:0;
+
+transform-origin:center;
+
+}
+
+.sprite1{
+background-image:url("../images/sprites/runner1.gif");
+}
+
+.sprite2{
+background-image:url("../images/sprites/runner2.gif");
+}
+
+.sprite3{
+background-image:url("../images/sprites/runner3.gif");
+}
+
+.sprite4{
+background-image:url("../images/sprites/runner4.gif");
+}
+
+@keyframes runAround{
+
+0%   { 
+
+left:90%; 
+	top:-5%; 
+	transform:rotate(0deg)
+}
+
+
+24.9%  { 
+
+	left:-10%; 
+top:-5%; 
+transform:rotate(0deg) 
+}
+25%  { 
+
+	left:-10%; 
+top:-5%; 
+transform:rotate(270deg) 
+}
+
+49.9%  { 
+
+	left:-10%; 
+	top:90%; 
+	transform:rotate(270deg)
+}
+50%  { 
+
+	left:-10%; 
+	top:90%; 
+	transform:rotate(180deg)
+}
+
+74.9%  { 
+
+	left:90%; 
+	top:90%; 
+	transform:rotate(180deg)
+}
+75%  { 
+
+	left:90%; 
+	top:90%; 
+	transform:rotate(90deg)
+}
+99.9% { 
+
+	left:90%; 
+	top:-5%; 
+	transform:rotate(90deg)
+}
+
+100% { 
+
+	left:90%; 
+	top:-5%; 
+	transform:rotate(0deg)
+}
+
+}
+
+.game:hover .sprite{
+
+opacity:1;
+
+animation:runAround 4s linear infinite;
+
+}
+
+/* =====================
+   CONTROLLER EFFECT
+===================== */
+
+.game:hover{
+transform:scale(.9);
+}
+
+
+
+/* =====================
+   POLAROID IMAGE SWAP
+===================== */
+
+.polaroid-card1:hover {
+background-image:url("../images/photo1_alt.png");
+}
+
+.polaroid-card2:hover {
+background-image:url("../images/photo2_alt.png");
+}
+
+.polaroid-card3:hover {
+background-image:url("../images/photo3_alt.png");
+}
+
+
+
+/* =====================
+   WALKMAN SPIN
+===================== */
+
+
+@keyframes spin{
+from{transform:rotate(0)}
+to{transform:rotate(360deg)}
+}
+
+
+
+
+
+
+
+.walkman-player1:hover .cd1{
+animation:spin 2s linear infinite;
+}
+.walkman-player2:hover .cd2{
+animation:spin 2s linear infinite;
+}
+.walkman-player3:hover .cd3{
+animation:spin 2s linear infinite;
+}
+
+/* =====================
+   ITEM DEBUG (for placement)
+===================== */
+
+.film-preview{ border:2px solid cyan; }
+
+
+
+.walkman-player{ border:2px solid purple; }
+
+.polaroid-card1{ border:2px solid orange; }
+.polaroid-card2{ border:2px solid pink; }
+.polaroid-card3{ border:2px solid lime; }
+
+
+
+/* =====================
+   HOTSPOT DEBUG
+
+
+.coffee{ border:2px solid red; }
+.polaroid{ border:2px solid blue; }
+.controller{ border:2px solid green; }
+.rat{ border:2px solid yellow; }
+.walkman{ border:2px solid purple; }
+.film{ border:2px solid orange; }
+===================== */
