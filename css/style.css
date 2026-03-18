@@ -675,30 +675,3 @@ animation:spin 2s linear infinite;
 animation:spin 2s linear infinite;
 }
 
-/* =====================
-   ITEM DEBUG (for placement)
-===================== */
-
-.film-preview{ border:2px solid cyan; }
-
-
-
-.walkman-player{ border:2px solid purple; }
-
-.polaroid-card1{ border:2px solid orange; }
-.polaroid-card2{ border:2px solid pink; }
-.polaroid-card3{ border:2px solid lime; }
-
-
-
-/* =====================
-   HOTSPOT DEBUG
-
-
-.coffee{ border:2px solid red; }
-.polaroid{ border:2px solid blue; }
-.controller{ border:2px solid green; }
-.rat{ border:2px solid yellow; }
-.walkman{ border:2px solid purple; }
-.film{ border:2px solid orange; }
-===================== */
