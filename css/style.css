@@ -309,7 +309,7 @@ height:40%;
 
 
 .rat-text{
-border:1px solid white;
+text-align: justify;
 left:5%;
 top:25%;
 width:20%;
