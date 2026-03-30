@@ -310,10 +310,10 @@ height:40%;
 
 .rat-text{
 text-align: justify;
-left:5%;
-top:25%;
-width:20%;
-height:40%;
+  left:5%;
+  top:25%;
+  width:20%;
+  max-width:400px;
 }
 
 
