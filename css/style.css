@@ -417,101 +417,91 @@ width:20%;
 height:40%;
 }
 
-.coffee-carousel{
-
-position:absolute;
-
-left:5%;
-top:25%;
-
-width:20%;
-height:20%;
-
-overflow:hidden;
-border:1px solid white;
+.coffee-carousel {
+	position: absolute;
+	left: 5%;
+	top: 25%;
+	width: 20%;
+	height: 20%;
+	overflow: hidden;
+	border: 1px solid white;
 }
 
-.coffee-track{
-
-display:flex;
-
-transition:transform .4s ease;
+.coffee-track {
+	display: flex;
+	width: 90%;
+	height: 90%;
+	transition: transform .4s ease;
 
 }
 
-.coffee-project{
-
-min-width:100%;
-
-display:flex;
-flex-direction:column;
-align-items:center;
+.coffee-project {
+	min-width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
 }
 
-.coffee-image{
-
-width:80%;
-height:70%;
-
-background-size:contain;
-background-repeat:no-repeat;
-background-position:center;
+.coffee-image {
+	width: 80%;
+	height: 70%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 
 }
 
-.coffee-img1{
-background-image:url("../images/coffee1.png");
-}
-
-.coffee-img2{
-background-image:url("../images/coffee2.png");
-}
-
-.coffee-img3{
-background-image:url("../images/coffee3.png");
-}
-
-.coffee-arrow{
-
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-
-background:transparent;
-
-border:none;
-
-color:white;
-
-font-size:24px;
-
-width:35px;
-height:35px;
-
-cursor:pointer;
-
-z-index:20;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-border-radius:50%;
-pointer-events:auto;
-}
-
-.coffee-arrow.left{
-left:5px;
-}
-
-.coffee-arrow.right{
-right:5px;
+.coffee-img1 {
+	background-image: url("../images/coffee1.png");
 
 }
 
-.coffee-arrow:hover{
-transform:translateY(-50%) scale(1.1);
+.coffee-img2 {
+	background-image: url("../images/coffee2.png");
+}
+
+.coffee-img3 {
+	background-image: url("../images/coffee3.png");
+}
+
+.coffee-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: transparent;
+	border: none;
+	color: white;
+	font-size: 24px;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	z-index: 20;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	pointer-events: auto;
+}
+
+	.coffee-arrow.left {
+		left: 5px;
+	}
+
+	.coffee-arrow.right {
+		right: 5px;
+	}
+
+	.coffee-arrow:hover {
+		transform: translateY(-50%) scale(1.1);
+	}
+
+.coffee-text {
+	text-align: center;
+	word-break: normal;
+	overflow-wrap: break-word;
+	white-space: normal;
+
 }
 
 /* =====================
